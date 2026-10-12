@@ -7,6 +7,8 @@
 # Run tests with the 'Run Tests' button or pytest to verify your solutions!
 # ==============================================================================
 
+import random
+import math
 import math  # noqa: F401
 
 # ------------------------------------------------------------------------------
@@ -28,8 +30,15 @@ import math  # noqa: F401
 #    print(f"Net USD: ${net_usd:.2f}")
 # ------------------------------------------------------------------------------
 # TODO: Write your code for Challenge 1 below:
-
-
+amount_eur = float(input("Enter amount in EUR:"))
+exchange_rate = float(input("Enter exchange rate(EUR to USD)\n"))
+gross_usd = amount_eur * exchange_rate
+fee = gross_usd * 0.02
+net_usd = gross_usd - fee
+# i wondered why we used the dolar sign first at the first look tbh i got it later
+print(f"Gross USD: ${gross_usd:.2f}")
+print(f"Fee: ${fee:.2f}")
+print(f"Net USD: ${net_usd:.2f}")
 # ------------------------------------------------------------------------------
 # Challenge 2: Pizza Party Slices & Leftovers
 # You are hosting a computer science pizza party!
@@ -51,8 +60,16 @@ import math  # noqa: F401
 #    print(f"Leftover slices: {leftover_slices}")
 # ------------------------------------------------------------------------------
 # TODO: Write your code for Challenge 2 below:
-
-
+Amount_Student = int(input("Enter number of students: "))
+Number_pizza = int(input("Enter number of pizzas: "))
+Slice_per_pizza = int(input("Enter slices per pizza:\n "))
+Spp = Slice_per_pizza
+total_slice = Number_pizza*Spp
+sps = total_slice // Amount_Student
+leftover_slices = total_slice % Amount_Student
+print(f"Total slices: {total_slice}")
+print(f"Slices per student: {sps}")
+print(f"Leftover slices: {leftover_slices}")
 # ------------------------------------------------------------------------------
 # Challenge 3: Sphere Geometry (Volume & Surface Area)
 # Think Python Exercise 2.2:
@@ -68,8 +85,12 @@ import math  # noqa: F401
 #    print(f"Sphere Surface Area: {surface_area:.2f}")
 # ------------------------------------------------------------------------------
 # TODO: Write your code for Challenge 3 below:
-
-
+# first time using import math for pi
+radius = float(input("Enter sphere radius: \n"))
+volume = (4 / 3) * math.pi * (radius ** 3)
+surface_area = 4 * math.pi * (radius ** 2)
+print(f"Sphere Volume: {volume:.2f}")
+print(f"Sphere Surface Area: {surface_area:.2f}")
 # ------------------------------------------------------------------------------
 # Challenge 4: 3-Cup Shell Game (Cyclic Variable Rotation)
 # In class we swapped 2 variables (a, b = b, a).
@@ -87,8 +108,12 @@ import math  # noqa: F401
 #    print(cup_a, cup_b, cup_c, sep=" -> ")
 # ------------------------------------------------------------------------------
 # TODO: Write your code for Challenge 4 below:
-
-
+cup_a = input("Enter item in Cup A: ").strip()
+cup_b = input("Enter item in Cup B: ").strip()
+cup_c = input("Enter item in Cup C: ").strip()
+cups = [cup_a, cup_b, cup_c]
+random.shuffle(cups)
+print(*cups, sep=" =>")
 # ------------------------------------------------------------------------------
 # Challenge 5: Digital Event Badge Generator
 # Generate a formatted conference badge for attendees using string methods
@@ -114,4 +139,16 @@ import math  # noqa: F401
 # ------------------------------------------------------------------------------
 # TODO: Write your code for Challenge 5 below:
 
+full_name = input("Enter attendee name: ").strip().title()
+department = input("Enter department: ").strip().upper()
+role = input("Enter role: ").strip().title()
 
+border = ("#" * 32 + "\n") * 2
+print(border, end="")
+print(f"NAME: {full_name}")
+print(f"DEPT: {department}")
+print(f"ROLE: {role}")
+print(f"NAME LENGTH: {len(full_name)}")
+print(border, end="")
+
+# i gotta work on those basic imports tbh.
