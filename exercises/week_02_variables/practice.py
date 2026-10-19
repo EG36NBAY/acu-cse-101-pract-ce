@@ -56,14 +56,6 @@ arrival_minute = (total_time_seconds % 3600) // 60
 print(f"Arrival Time: {arrival_hour:02d}:{arrival_minute:02d}")
 
 
-# ------------------------------------------------------------------------------
-# Part 3: Centering & Formatting Strings
-# String centering adds padding around text to reach a chosen width.
-#
-# In-Class Goal:
-# Center "PYTHON CSE 101" in a 30-character banner using "=" as padding.
-# Print the banner.
-# ------------------------------------------------------------------------------
 # TODO: Write Part 3 together in class below:
 text = "PYTHON CSE 101"
 banner = text.center(30, "=")
